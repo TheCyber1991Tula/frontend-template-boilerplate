@@ -1,8 +1,6 @@
-const paths = require('../paths')
-const del = require('del')
+const del = require('del');
+const paths = require('../paths');
 
-const clean = () => {
-    return del(paths.clean.dir)
-}
+const clean = () => del(paths.clean.dir);
 
-export default clean
+export default clean;

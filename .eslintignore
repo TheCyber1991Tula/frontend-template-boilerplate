@@ -1,4 +1,5 @@
-/lib
 /build
 /.git
 package.json
+node_modules
+/.vscode
