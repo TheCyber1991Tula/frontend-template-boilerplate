@@ -15,10 +15,15 @@ module.exports = {
     },
     plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
     rules: {
+        'no-alert': 'off',
         'no-eval': 'error',
-        indent: ['error', 4],
+        'no-console': 'off',
+        'strict': 'off',
+        'indent': ['error', 4],
         'quote-props': 'off',
+        'quotes': ['error', 'single'],
         'implicit-arrow-linebreak': ['error', 'beside'],
         'arrow-parens': ['error', 'as-needed'],
+        'lines-around-directive': ['error', 'never'],
     },
 };
