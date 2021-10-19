@@ -1,21 +1,23 @@
-const gulp = require('gulp');
-const autoprefixer = require('autoprefixer');
+import gulp from 'gulp';
+import autoprefixer from 'autoprefixer';
 const browserSync = require('browser-sync').create();
-const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const postcssNested = require('postcss-nested');
+import cleanCSS from 'gulp-clean-css';
+import concat from 'gulp-concat';
+import plumber from 'gulp-plumber';
+import postcss from 'gulp-postcss';
+import postcssNested from 'postcss-nested';
 const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
-const paths = require('../paths');
+import sourcemaps from 'gulp-sourcemaps';
+import paths from '../paths';
 
+// * конфигурация для таска
 const config = {
     sass: { outputStyle: 'compressed' },
     renameCss: { suffix: '.min' },
     cleanCSS: { compatibility: 'ie8' },
 };
 
+// * описание таска
 const styles = () =>
     gulp
         .src(paths.styles.src)
@@ -29,4 +31,4 @@ const styles = () =>
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream());
 
-export default styles;
+export default styles ;

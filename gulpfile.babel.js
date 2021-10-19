@@ -1,12 +1,9 @@
-const gulp = require('gulp');
-const styles = require('./gulp/tasks/styles');
-const scripts = require('./gulp/tasks/scripts');
-const html = require('./gulp/tasks/html');
-const clean = require('./gulp/tasks/clean');
-const watch = require('./gulp/tasks/watch');
+import { task, series, parallel } from 'gulp';
+import styles from './gulp/tasks/styles';
+import scripts from './gulp/tasks/scripts';
+import html from './gulp/tasks/html';
+import clean from './gulp/tasks/clean';
+import watching from './gulp/tasks/watch';
 
-const dev = gulp.series(watch);
-const build = gulp.series(clean, gulp.parallel(html, styles, scripts));
-
-exports.build = build;
-exports.dev = dev;
+task('dev', watching);
+task('build', series(clean, parallel(html, styles, scripts)));

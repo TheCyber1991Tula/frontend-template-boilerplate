@@ -1,15 +1,17 @@
-const gulp = require('gulp');
-const babel = require('gulp-babel');
+import gulp from 'gulp';
+import babel from 'gulp-babel';
 const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const plumber = require('gulp-plumber');
-const paths = require('../paths');
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import plumber from 'gulp-plumber';
+import paths from '../paths';
 
+// * конфигурация для таска
 const config = {
     uglify: { toplevel: true },
 };
 
+// * описание таска
 const scripts = () =>
     gulp
         .src(paths.scripts.src, { sourcemaps: true })

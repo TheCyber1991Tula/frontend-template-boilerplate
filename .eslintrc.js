@@ -19,5 +19,6 @@ module.exports = {
         indent: ['error', 4],
         'quote-props': 'off',
         'implicit-arrow-linebreak': ['error', 'beside'],
+        'arrow-parens': ['error', 'as-needed'],
     },
 };

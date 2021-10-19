@@ -1,9 +1,10 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
 const browserSync = require('browser-sync').create();
-const htmlmin = require('gulp-htmlmin');
-const plumber = require('gulp-plumber');
-const paths = require('../paths');
+import htmlmin from 'gulp-htmlmin';
+import plumber from 'gulp-plumber';
+import paths from '../paths';
 
+// * конфигурация для таска
 const config = {
     'html': {
         'collapseWhitespace': true,
@@ -11,6 +12,7 @@ const config = {
     },
 };
 
+// * описание таска
 const html = () => gulp
     .src(paths.html.src)
     .pipe(plumber())
