@@ -1,16 +1,11 @@
-/* Build config:
-  ========================================================================== */
+import { merge } from 'webpack-merge';
+import { webpackBaseConfig as webpackConfig } from './webpack.base.conf';
 
-// Source: https://github.com/survivejs/webpack-merge
-const { merge } = require('webpack-merge')
-// Base config
-const baseWebpackConfig = require('./webpack.base.conf')
-
-const buildWebpackConfig = merge(baseWebpackConfig, {
-  mode: 'production',
-  plugins: []
-})
+const buildWebpackConfig = merge(webpackConfig, {
+    mode: 'production',
+    plugins: [],
+});
 
 module.exports = new Promise((resolve, reject) => {
-  resolve(buildWebpackConfig)
-})
+    resolve(buildWebpackConfig);
+});
