@@ -3,6 +3,7 @@ import paths from '../paths';
 import styles from './styles';
 import scripts from './scripts';
 import html from './html';
+import images from './images';
 
 const browserSync = require('browser-sync').create();
 
@@ -19,6 +20,7 @@ const watching = () => {
     watch(paths.scripts.src, scripts).on('change', browserSync.reload);
     watch(paths.styles.src, styles).on('change', browserSync.reload);
     watch(paths.html.src, html).on('change', browserSync.reload);
+    watch(paths.images.src, images).on('change', browserSync.reload);
 };
 
 export default watching;

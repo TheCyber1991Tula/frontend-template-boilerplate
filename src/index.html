@@ -5,12 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.min.css" />
-        <title>Orbit Page</title>
+        <link rel="icon" href="img/icon.png">
+        <title>Layout Demo Page</title>
     </head>
     <body>
         <header>
             <div class="header__logo-block">
-                <b>your company name</b>
+                <b>Name of Your Company</b>
 
                 <!--company logo-->
                 <img src="" alt="" />
@@ -18,38 +19,56 @@
 
             <nav>
                 <ul>
-                    lorem ipsum dolor sit amet
-                    <li><a href="#">lorem ipsum</a></li>
-                    <li><a href="#">lorem ipsum</a></li>
-                    <li><a href="#">lorem ipsum</a></li>
-                    <li><a href="#">lorem ipsum</a></li>
-                    <li><a href="#">lorem ipsum</a></li>
+                    <li class="nav__link"><a href="#">Feedback</a></li>
+                    <li class="nav__link"><a href="#">Products</a></li>
+                    <li class="nav__link"><a href="#">Contacts</a></li>
+                    <li class="nav__link"><a href="#">About Us</a></li>
                 </ul>
 
-                <button class="nav__button-call-back">
-                    <img src="" alt="" />
+                <button class="nav__button-call-back">Call me
+                    <img src="./img/nav-btn-callback.jpeg" alt="" width="32" height="32" />
                 </button>
             </nav>
         </header>
 
         <aside>
-            <form action="">
-                <fieldset>
-                    <label><input type="text" />text</label>
-                    <label><input type="number" />number</label>
+            <form action="" method="post">
+                <fieldset class="aside__fieldset__inputs">
+                    <label><input type="text" />Text input</label>
 
-                    <label><input type="email" name="" id="" />email</label>
+                    <label><input type="number" />Number input</label>
 
-                    <label><input type="checkbox" />check it</label>
-                    <label><input type="radio" />radio button</label>
+                    <label><input type="email" name="" id="" />E-Mail</label>
+
+                    <label><input type="checkbox" />Checkbox</label>
+
+                    <label><input type="radio" />Radio button</label>
                 </fieldset>
 
-                <fieldset>
-                    <textarea name="" id="" cols="30" rows="10"> </textarea>
+                <fieldset class="aside__fieldset__textarea">
+                    <textarea name="" id="" cols="80" rows="10">Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Deleniti sint nobis doloribus, corrupti dolorum quo consequatur aliquid eum incidunt quam earum ea corporis vel commodi. Esse, atque! Veniam, ea eveniet.</textarea>
+
+                    <div class="aside__fieldset__buttons">
+                        <button class="fieldset-button button-blue">Test button 1</button>
+                        <button class="fieldset-button button-green">Test button 2</button>
+                        <button class="fieldset-button button-orange">Test button 3</button>
+                    </div>
                 </fieldset>
 
-                <fieldset>
-                    <select name="" id="">
+                <fieldset class="aside__fieldset__selectors">
+                    <select name="language" id="" required>
+                        <option value="0">Ruby</option>
+                        <option value="1">Python</option>
+                        <option value="2">JavaScript</option>
+                    </select>
+
+                    <select name="langSkill" id="" required>
+                        <option value="0">Junior</option>
+                        <option value="1">Middle</option>
+                        <option value="2">Senior</option>
+                    </select>
+
+                    <select name="" id="" required>
                         <option value="0">value 1</option>
                         <option value="1">value 2</option>
                         <option value="2">value 3</option>
@@ -59,9 +78,9 @@
         </aside>
 
         <main>
-            <table>
+            <table class="main__table__black-white">
                 <caption>
-                    table heading
+                    Table caption
                 </caption>
                 <thead>
                     <tr>
@@ -72,17 +91,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table__row-1">
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
+                    <tr class="table__black-white__row-1">
+                        <td>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Deleniti sint nobis doloribus, corrupti dolorum quo consequatur</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Deleniti sint nobis doloribus, corrupti dolorum quo consequatur</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Deleniti sint nobis doloribus, corrupti dolorum quo consequatur</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Deleniti sint nobis doloribus, corrupti dolorum quo consequatur</td>
                     </tr>
-                    <tr class="table__row-2">
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
-                        <td>lorem ipsum dolor sit amet</td>
+                    <tr class="table__black-white__row-2">
+                        <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</td>
+                        <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</td>
+                        <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</td>
+                        <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</td>
                     </tr>
                 </tbody>
             </table>
@@ -106,6 +125,34 @@
                     <p>lorem ipsum dolor sit amet</p>
                 </div>
             </div>
+
+            <table class="main__table__colored">
+                <caption>
+                    Table caption
+                </caption>
+                <thead>
+                    <tr>
+                        <td>lorem ipsum dolor sit amet</td>
+                        <td>lorem ipsum dolor sit amet</td>
+                        <td>lorem ipsum dolor sit amet</td>
+                        <td>lorem ipsum dolor sit amet</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table__colored__row-1">
+                        <td>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                        <td>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                        <td>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                        <td>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                    </tr>
+                    <tr class="table__colored__row-2">
+                        <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus</td>
+                        <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus</td>
+                        <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus</td>
+                        <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus</td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
 
         <footer>

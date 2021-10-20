@@ -1,5 +1,5 @@
 import del from 'del';
-import paths from '../paths';
+import paths from '../paths.js';
 
 const clean = () => del(paths.clean.dir);
 

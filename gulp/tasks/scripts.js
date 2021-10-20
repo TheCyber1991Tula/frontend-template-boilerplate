@@ -5,7 +5,7 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import plumber from 'gulp-plumber';
 import prettier from 'gulp-prettier';
-import paths from '../paths';
+import paths from '../paths.js';
 
 // * конфигурация для таска
 const config = {

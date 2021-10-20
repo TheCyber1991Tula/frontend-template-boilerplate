@@ -1,7 +1,9 @@
 import { merge } from 'webpack-merge';
-import { webpackBaseConfig as webpackConfig } from './webpack.base.conf';
+import './webpack.base.conf';
 
-const buildWebpackConfig = merge(webpackConfig, {
+// *TODO разобраться с импортами
+
+const buildWebpackConfig = merge(config, {
     mode: 'production',
     plugins: [],
 });
