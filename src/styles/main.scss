@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Georama:wght@200&family=Open+Sans:ital,wght@1,500&display=swap');
-
 main{
 	display: flex;
 	flex-direction: column;
@@ -9,17 +7,21 @@ main{
 	height: auto;
 
 	table{
-		width: 70%;
+		margin: 100px;
+		width: 80%;
+		min-height: 500px;
 
 		caption{
 			color: #201F21;
 			font: {
     			family: 'Open Sans', sans-serif;
     			size: 30px;
+    			weight: bold;
     		}
 		}
 
 		td{
+			text-align: center;
 			padding: 20px;
 		}
 	}
@@ -29,11 +31,12 @@ main{
 		thead{
 			td{
 				text-transform: capitalize;
-				height: 40px;
+				height: 50px;
 				background: white;
 				font: {
-					family: 'Georama', sans-serif;
-					size: 17px;
+					family: 'Karla', sans-serif;
+					size: 21px;
+					weight: bold;
 				};
 			}
 		}
@@ -43,8 +46,8 @@ main{
 				background: gray;
 				color: white;
 				font: {
-					family: 'Georama', sans-serif;
-					size: 17px;
+					family: 'Karla', sans-serif;
+					size: 19px;
 				};
 			}
 		}
@@ -54,23 +57,24 @@ main{
 
 		thead{
 			td{
-				text-align: center;
 				text-transform: capitalize;
 				height: 40px;
 				background: green;
 				font: {
-					family: 'Georama', sans-serif;
-					size: 17px;
+					family: 'Karla', sans-serif;
+					size: 21px;
+					weight: bold;
 				};
 			}
 		}
 		tbody{
 			td{
 				height: 35px;
-				background: yellow;
+				background: #C18B17;
+				color:white;
 				font: {
-					family: 'Georama', sans-serif;
-					size: 17px;
+					family: 'Karla', sans-serif;
+					size: 19px;
 				};
 			}
 		}
@@ -80,21 +84,26 @@ main{
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		min-height: 250px;
-		max-height: 400px;
 		justify-content: space-evenly;
 
 		.main__cards__card{
-
+			max-width: 20%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 
 			h2{
 				text-transform: uppercase;
 				color: #201F21;
 				font: {
 					family: 'Catamaran', sans-serif;
-					size: 22px;
-				};
+					size: 32px;
+				}
 			}
+
+
 		}
 	}
 }

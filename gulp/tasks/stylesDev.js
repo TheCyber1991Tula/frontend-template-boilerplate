@@ -18,7 +18,7 @@ const config = {
 };
 
 // * описание таска
-const styles = () =>
+const stylesDev = () =>
     gulp
         .src(paths.styles.src)
         .pipe(plumber())
@@ -31,4 +31,14 @@ const styles = () =>
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream());
 
-export default styles ;
+const stylesBuild = () =>
+    gulp
+        .src(paths.styles.src)
+        .pipe(plumber())
+        .pipe(sass(config.sass))
+        .pipe(cleanCSS(config.cleanCSS))
+        .pipe(postcss([autoprefixer, postcssNested]))
+        .pipe(concat('style.min.css'))
+        .pipe(gulp.dest(paths.styles.dest))
+
+export default stylesDev;

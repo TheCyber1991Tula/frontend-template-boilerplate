@@ -12,8 +12,8 @@ const paths = {
         'dest': 'dist/',
     },
     'images': {
-        'src': 'src/img/*.{jpg,png,svg,gif,webp,ico}',
-        'dest': 'dist/',
+        'src': 'src/img/*.{jpg,jpeg,png,svg,gif,webp,ico}',
+        'dest': 'dist/img/',
     },
     'clean': {
         'dir': 'dist/',

@@ -69,6 +69,7 @@
     "scripts": {
         "gulp-build": "gulp build",
         "gulp-dev": "gulp dev",
+        "gulp-clean": "gulp clean",
         "lint:write": "eslint --debug gulp/ --fix",
         "lint": "eslint --debug src/",
         "webpack-build": "webpack --config ./webpack/webpack.build.conf.js",

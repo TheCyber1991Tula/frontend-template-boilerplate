@@ -1,6 +1,6 @@
 import { watch } from 'gulp';
 import paths from '../paths';
-import styles from './styles';
+import styles from './stylesDev';
 import scripts from './scripts';
 import html from './html';
 import images from './images';
