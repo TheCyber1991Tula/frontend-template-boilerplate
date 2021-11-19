@@ -1,8 +1,8 @@
-import { join } from 'path';
-import { readdirSync } from 'fs';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { VueLoaderPlugin } from 'vue-loader';
+const webpack = require('webpack');
+const { join } = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const PATHS = {
     src: join(__dirname, '../src'),
@@ -10,19 +10,34 @@ const PATHS = {
 };
 
 const PAGES_DIR = PATHS.src;
-const PAGES = readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'));
+
+const getPlugins = () => [new MiniCssExtractPlugin({ filename: `${PATHS.assets}css/[name].[contenthash].css` }),
+    new HtmlWebpackPlugin({ template: `${PAGES_DIR}/index.html`, minify: true }),
+    new webpack.SourceMapDevToolPlugin({ filename: '[file].map' }),
+    new CleanWebpackPlugin(),
+];
 
 module.exports = {
     externals: {
         paths: PATHS,
     },
+    mode: (process.env === 'production') ? 'production' : 'development',
     entry: {
         app: PATHS.src,
     },
     output: {
-        filename: `${PATHS.assets}js/[name].[contenthash].js`,
+        filename: `${PATHS}/js/[name].[contenthash].js`,
         path: PATHS.dist,
         publicPath: '/',
+    },
+    devtool: (process.env === 'production') ? '' : 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: PATHS.dist,
+        port: 8081,
+        overlay: {
+            warnings: true,
+            errors: true,
+        },
     },
     optimization: {
         splitChunks: {
@@ -43,7 +58,11 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: '/node_modules/',
             },
-            // *TODO добавить лоадер для реакта
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                exclude: '/node_modules/',
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -110,22 +129,11 @@ module.exports = {
         ],
     },
     resolve: {
+        extensions: ['.js', '.json', '.png', '.jp(e)g'],
         alias: {
-            '~': PATHS.src, // Example: import Dog from "~/assets/img/dog.jpg"
-            '@': `${PATHS.src}/js`, // Example: import Sort from "@/utils/sort.js"
-            vue$: 'vue/dist/vue.js',
+            '~': PATHS.src, // линк для директории src
+            '@': `${PATHS.src}/js`, // линк для директории /js
         },
     },
-    plugins: [
-        new VueLoaderPlugin(),
-        new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/[name].[contenthash].css`,
-        }),
-        ...PAGES.map(
-            page => new HtmlWebpackPlugin({
-                template: `${PAGES_DIR}/${page}`,
-                filename: `./${page}`,
-            }),
-        ),
-    ],
+    plugins: (process.env === 'production') ? [new CleanWebpackPlugin()] : getPlugins(),
 };
