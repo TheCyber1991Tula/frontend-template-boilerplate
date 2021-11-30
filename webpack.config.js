@@ -1,42 +1,56 @@
 const webpack = require('webpack');
-const { join } = require('path');
+const { resolve } = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
 
 const PATHS = {
-    src: join(__dirname, '../src'),
-    dist: join(__dirname, '../dist'),
+    src: resolve(__dirname, 'src'),
+    dist: resolve(__dirname, 'dist'),
 };
-
 const PAGES_DIR = PATHS.src;
 
-const getPlugins = () => [new MiniCssExtractPlugin({ filename: `${PATHS.assets}css/[name].[contenthash].css` }),
-    new HtmlWebpackPlugin({ template: `${PAGES_DIR}/index.html`, minify: true }),
+const getPlugins = () => [
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/index.html`,
+        minify: true,
+        favicon: 'favicon.png',
+        meta: {
+            viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no',
+            'X-UA-Compatible': 'IE=edge',
+            charset: 'UTF-8'
+        }
+    }),
     new webpack.SourceMapDevToolPlugin({ filename: '[file].map' }),
     new CleanWebpackPlugin(),
 ];
 
 module.exports = {
+    context: resolve(__dirname, 'src'),
     externals: {
         paths: PATHS,
     },
-    mode: (process.env === 'production') ? 'production' : 'development',
     entry: {
-        app: PATHS.src,
+        app: `${PATHS.src}/index.jsx`,
     },
     output: {
-        filename: `${PATHS}/js/[name].[contenthash].js`,
+        filename: '[name].[contenthash].js',
         path: PATHS.dist,
         publicPath: '/',
     },
-    devtool: (process.env === 'production') ? '' : 'cheap-module-eval-source-map',
+    devtool: process.env === 'production' ? '' : 'cheap-module-source-map',
     devServer: {
-        contentBase: PATHS.dist,
+        hot: true,
+        open: true,
         port: 8081,
-        overlay: {
-            warnings: true,
-            errors: true,
+        client: {
+            overlay: true,
+        },
+        headers: {
+            'Access-Control-Allow-Private-Network': true,
+            'Access-Control-Allow-Origin': '*',
         },
     },
     optimization: {
@@ -83,7 +97,14 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
+                    name: 'img/[name].[ext]',
+                },
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader',
+                options: {
+                    url: true,
                 },
             },
             {
@@ -99,7 +120,8 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: true,
-                            config: { path: './postcss.config.js' },
+                            // config: { path: './postcss.config.js' }, // * Path to postcss cnnfig file
+                            execute: false, // * Enable or Disable PostCSS Parser support in CSS-in-JS
                         },
                     },
                     {
@@ -108,32 +130,14 @@ module.exports = {
                     },
                 ],
             },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: { sourceMap: true },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            config: { path: './postcss.config.js' },
-                        },
-                    },
-                ],
-            },
         ],
     },
     resolve: {
-        extensions: ['.js', '.json', '.png', '.jp(e)g'],
+        extensions: ['.js', '.jsx', '.json', '.tsx'],
         alias: {
             '~': PATHS.src, // линк для директории src
             '@': `${PATHS.src}/js`, // линк для директории /js
         },
     },
-    plugins: (process.env === 'production') ? [new CleanWebpackPlugin()] : getPlugins(),
+    plugins: process.env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),
 };
