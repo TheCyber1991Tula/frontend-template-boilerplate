@@ -9,14 +9,13 @@ const PATHS = {
     src: resolve(__dirname, 'src'),
     dist: resolve(__dirname, 'dist'),
 };
-const PAGES_DIR = PATHS.src;
 
 const getPlugins = () => [
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/index.html`,
+        template: `${PATHS.src}/pages/index.html`,
         minify: true,
-        favicon: 'favicon.png',
+        favicon: 'assets/favicon.png',
         meta: {
             viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no',
             'X-UA-Compatible': 'IE=edge',
@@ -40,11 +39,12 @@ module.exports = {
         path: PATHS.dist,
         publicPath: '/',
     },
+    mode: process.env === 'production' ? 'production' : 'development',
     devtool: process.env === 'production' ? '' : 'cheap-module-source-map',
     devServer: {
         hot: true,
         open: true,
-        port: 8081,
+        port: 8097,
         client: {
             overlay: true,
         },
@@ -90,7 +90,7 @@ module.exports = {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
+                    name: 'fonts/[name].[ext]',
                 },
             },
             {
@@ -114,19 +114,22 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        options: { sourceMap: true },
+                        options: {
+                            sourceMap: process.env === 'production' ? false : true,
+                            url: true,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true,
+                            sourceMap: process.env === 'production' ? false : true,
                             // config: { path: './postcss.config.js' }, // * Path to postcss cnnfig file
                             execute: false, // * Enable or Disable PostCSS Parser support in CSS-in-JS
                         },
                     },
                     {
                         loader: 'sass-loader',
-                        options: { sourceMap: true },
+                        options: { sourceMap: this.mode === 'production' ? false : true },
                     },
                 ],
             },
@@ -135,8 +138,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.tsx'],
         alias: {
-            '~': PATHS.src, // линк для директории src
-            '@': `${PATHS.src}/js`, // линк для директории /js
+            '~': `${PATHS.src}`, // алиас для директории src/assets
         },
     },
     plugins: process.env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import TodoItem from '../todo/TodoItem';
+import TodoItem from './TodoItem';
 import styled from 'styled-components';
-import './todo.scss';
-import data from '../../scripts/data';
+import '../scripts/bootstrap.bundle.min.js'
+
+import '~/assets/styles/todo.scss';
 
 export default class Todo extends Component {
     render() {
