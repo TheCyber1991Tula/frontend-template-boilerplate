@@ -110,11 +110,12 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    // 'style-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
+                            esModule: false,
                             sourceMap: process.env === 'production' ? false : true,
                             url: true,
                         },

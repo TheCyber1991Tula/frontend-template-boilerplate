@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 import styled from 'styled-components';
-import '../scripts/bootstrap.bundle.min.js'
 
 import '~/assets/styles/todo.scss';
 
