@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const { env } = require('process')
 
 const PATHS = {
     src: resolve(__dirname, 'src'),
@@ -39,8 +40,8 @@ module.exports = {
         path: PATHS.dist,
         publicPath: '/',
     },
-    mode: process.env === 'production' ? 'production' : 'development',
-    devtool: process.env === 'production' ? '' : 'cheap-module-source-map',
+    mode: env === 'production' ? 'production' : 'development',
+    devtool: env === 'production' ? '' : 'cheap-module-source-map',
     devServer: {
         hot: true,
         open: true,
@@ -68,12 +69,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js(x)$/,
                 loader: 'babel-loader',
                 exclude: '/node_modules/',
             },
             {
-                test: /\.jsx$/,
+                test: /\.ts$/,
                 loader: 'babel-loader',
                 exclude: '/node_modules/',
             },
@@ -110,20 +111,19 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    // 'style-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
                             esModule: false,
-                            sourceMap: process.env === 'production' ? false : true,
+                            sourceMap: env === 'production' ? false : true,
                             url: true,
                         },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: process.env === 'production' ? false : true,
+                            sourceMap: env === 'production' ? false : true,
                             // config: { path: './postcss.config.js' }, // * Path to postcss cnnfig file
                             execute: false, // * Enable or Disable PostCSS Parser support in CSS-in-JS
                         },
@@ -137,10 +137,10 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.tsx'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
         alias: {
             '~': `${PATHS.src}`, // алиас для директории src/assets
         },
     },
-    plugins: process.env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),
+    plugins: env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),
 };
