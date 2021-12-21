@@ -1,6 +1,6 @@
 const paths = {
     'styles': {
-        'src': 'src/styles/*.scss',
+        'src': 'src/assets/styles/*.scss',
         'dest': 'dist/',
     },
     'scripts': {
@@ -8,11 +8,11 @@ const paths = {
         'dest': 'dist/',
     },
     'html': {
-        'src': 'src/index.html',
+        'src': 'src/pages/*.html',
         'dest': 'dist/',
     },
     'images': {
-        'src': 'src/img/*.{jpg,jpeg,png,svg,gif,webp,ico}',
+        'src': 'src/assets/img/*.{jpg,jpeg,png,svg,gif,webp,ico}',
         'dest': 'dist/img/',
     },
     'clean': {
