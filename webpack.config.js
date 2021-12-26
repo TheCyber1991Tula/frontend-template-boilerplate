@@ -28,12 +28,13 @@ const getPlugins = () => [
 ];
 
 module.exports = {
+    cache: true,
     context: resolve(__dirname, 'src'),
     externals: {
         paths: PATHS,
     },
     entry: {
-        app: `${PATHS.src}/index.jsx`,
+        app: `${PATHS.src}/index.tsx`,
     },
     output: {
         filename: '[name].[contenthash].js',
@@ -69,14 +70,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js(x)$/,
-                loader: 'babel-loader',
+                test: /\.js(x)?$/,
                 exclude: '/node_modules/',
+                use: ['babel-loader'],
             },
             {
-                test: /\.ts$/,
-                loader: 'babel-loader',
+                test: /\.ts(x)?$/,
                 exclude: '/node_modules/',
+                use: ['babel-loader'],
             },
             {
                 test: /\.vue$/,
@@ -139,7 +140,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
         alias: {
-            '~': `${PATHS.src}`, // алиас для директории src/assets
+            Assets: `${PATHS.src}/assets`, // алиас для директории src/assets
+            Components: `${PATHS.src}/components` // алиас для директории src/components
         },
     },
     plugins: env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),

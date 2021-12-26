@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import '~/assets/styles/todoItem.scss';
 
 export default class TodoItem extends Component {

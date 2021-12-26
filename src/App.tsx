@@ -10,7 +10,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Header currentDate="fuck you!!"/>
+                <Header currentDate="fuck you!!" />
                 <Post />
                 <Todo />
                 <Footer />

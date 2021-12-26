@@ -1,4 +1,4 @@
-export const elements = [
+const elements = [
     {
         heading: 'Смартфон',
         price: 15000,
@@ -25,3 +25,4 @@ export const elements = [
         description: 'inventore quaerat enim',
     },
 ];
+export default elements;
