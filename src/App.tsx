@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
+import * as React from 'react';
+import styled from 'styled-components';
 import Header from './components/Header';
 import Todo from './components/Todo';
 import Footer from './components/Footer';
 import Post from './components/Post';
 
-import '~/assets/styles/style.scss';
-
-export default class App extends Component {
+export default class App extends React.Component {
     render() {
         return (
-            <div>
-                <Header currentDate="fuck you!!" />
+            <StyledApp>
+                <Header />
                 <Post />
                 <Todo />
                 <Footer />
-            </div>
+            </StyledApp>
         );
     }
 }
+
+const StyledApp = styled.div`
+    width: 100%;
+    height: 100%;
+`;

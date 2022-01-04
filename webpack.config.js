@@ -138,10 +138,12 @@ module.exports = {
         ],
     },
     resolve: {
+        enforceExtension: false,
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
         alias: {
             Assets: `${PATHS.src}/assets`, // алиас для директории src/assets
-            Components: `${PATHS.src}/components` // алиас для директории src/components
+            Components: `${PATHS.src}/components`, // алиас для директории src/components
+            Scripts: `${PATHS.src}/scripts` // алиас для директории src/components
         },
     },
     plugins: env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),

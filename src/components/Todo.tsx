@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import TodoItem from './TodoItem';
-
-import '~/assets/styles/todo.scss';
 
 export default class Todo extends Component {
     render() {
         return (
-            <div className="container text-center">
+            <StyledTodo className="container text-center">
                 <TodoItem />
-            </div>
+            </StyledTodo>
         );
     }
 }
+
+const StyledTodo = styled.div`
+    width: 100%;
+    height: auto;
+    background: skyblue;
+    font-family: 'Roboto Regular';
+    font-style: italic;
+`;

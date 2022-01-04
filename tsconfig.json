@@ -57,7 +57,7 @@
         "target": "es5",
         "watch": true,
         // Дополнительные настройки.
-        "allowSyntheticDefaultImports": false,
+        "allowSyntheticDefaultImports": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "allowUmdGlobalAccess": false,
@@ -71,7 +71,7 @@
         "emitBOM": false,
         "emitDeclarationOnly": false,
         "emitDecoratorMetadata": false,
-        "esModuleInterop": false,
+        "esModuleInterop": true,
         "experimentalDecorators": false,
         "extendedDiagnostics": false,
         "forceConsistentCasingInFileNames": false,
