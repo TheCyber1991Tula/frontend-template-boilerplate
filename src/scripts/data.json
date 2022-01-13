@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "info": {
+            "heading": "Смартфон",
+            "price": 15000,
+            "description": "et enim repellendus"
+        }
+    },
+    {
+        "id": 2,
+        "info": {
+            "heading": "Диван",
+            "price": 10000,
+            "description": "et enim repellendus"
+        }
+    },
+    {
+        "id": 3,
+        "info": {
+            "heading": "Стол",
+            "price": 2000,
+            "description": "et enim repellendus"
+        }
+    },
+    {
+        "id": 4,
+        "info": {
+            "heading": "Люстра",
+            "price": 1500,
+            "description": "et enim repellendus"
+        }
+    },
+    {
+        "id": 5,
+        "info": {
+            "heading": "Шкаф",
+            "price": 5000,
+            "description": "et enim repellendus"
+        }
+    }
+]

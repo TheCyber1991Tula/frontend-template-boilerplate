@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+// import styled from 'styled-components';
+// import * as postData from 'src/scripts/data.json';
 import TodoItem from './TodoItem';
+import 'src/assets/fonts/fonts.scss';
 
-export default class Todo extends Component {
-    render() {
-        return (
-            <StyledTodo className="container text-center">
-                <TodoItem />
-            </StyledTodo>
-        );
-    }
+interface IPost {
+    id: number
+    heading: string
+    price: number
+    description: string
+    canBuy(): boolean
 }
 
-const StyledTodo = styled.div`
+interface Style {
+    [key: string]: string
+}
+
+/*
+const STodoItem: Style = styled.div`
     width: 100%;
     height: auto;
     background: skyblue;
     font-family: 'Roboto Regular';
     font-style: italic;
 `;
+*/
+
+const Todo = () => <TodoItem id={} heading={} price={} description={}/>;
+
+export default Todo;

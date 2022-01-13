@@ -1,22 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import '../assets/fonts/fonts.scss';
+import 'src/assets/fonts/fonts.scss';
 
-export default class TodoItem extends Component {
-    render() {
-        return (
-            //! добавить кнопки выполнено и удалить
-            <TodoListItem>
-                <p>todo list item</p>
-            </TodoListItem>
-        );
-    }
+interface IPost {
+    id: number
+    heading: string
+    price: number
+    description: string
+    canBuy: () => boolean
 }
 
-const TodoListItem = styled.div`
+interface Style {
+    [key: string]: string
+}
+
+const StyledTodo: Style = styled.div`
+    width: 100%;
+    height: auto;
+    background: skyblue;
+    font-family: 'Roboto Regular';
+    font-style: italic;
+`;
+
+const StyledTodoListItem: Style = styled.div`
     width: 500px;
     height: 100px;
     background: silver;
     border: 1px solid black;
     border-radius: 5px;
 `;
+
+const TodoItem = ({ info, heading, price, description }) => {
+    return (
+        <StyledTodoListItem>
+            <p>{info}</p>
+            <b>{heading}</b>
+            <p>{price}</p>
+            <i>{description}</i>
+        </StyledTodoListItem>
+    );
+};
+
+export default TodoItem;

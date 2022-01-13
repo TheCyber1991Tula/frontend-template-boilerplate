@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import './scripts/lections';
 import App from './App';
+import './scripts/lections';
 
 ReactDOM.render(<App />, document.getElementById('app'));

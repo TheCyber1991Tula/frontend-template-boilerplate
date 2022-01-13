@@ -65,6 +65,7 @@
             "error",
             "never"
         ],
+        "max-len": ["error", { "code": 120, "tabWidth": 4 }],
         "no-alert": "off",
         "no-console": "off",
         "no-eval": "error",
@@ -76,6 +77,7 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
+        "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
         "no-use-before-define": "off",
         "no-unused-vars": "off",
         "prefer-template": "error",
@@ -93,6 +95,7 @@
             "afterOpening": "never",
             "beforeClosing": "never"
         }],
+        "react/prop-types": [1, {}],
         "quote-props": "off",
         "quotes": [
             "error",

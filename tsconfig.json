@@ -86,8 +86,8 @@
         "newLine": "CRLF",
         "noEmit": false,
         "noFallthroughCasesInSwitch": false,
-        "noImplicitAny": false,
-        "noImplicitThis": false,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
         "noImplicitReturns": false,
         "noLib": false,
         "noResolve": false, // Не добавлять "/// <reference path="..." />" в список скомпилированных файлов.
@@ -95,6 +95,7 @@
         "plugins": [],
         "preserveConstEnums": false,
         "preserveSymlinks": false,
+        "resolveJsonModule": true,
         "sourceRoot": ".",
         "skipLibCheck": false,
         "skipDefaultLibCheck": false,
@@ -109,7 +110,9 @@
         "src/App.tsx"
     ],
     "include": [
-        "src/**/*"
+        "src/scripts/data.json",
+        "src/scripts/lections.ts",
+        "src/components/**.*",
     ],
     "exclude": [
         "src/**/*.spec.ts",

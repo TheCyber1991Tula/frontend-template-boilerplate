@@ -41,6 +41,8 @@
         "@babel/preset-typescript": "^7.16.0",
         "@babel/register": "^7.15.3",
         "@types/node": "^17.0.5",
+        "@types/react": "^17.0.38",
+        "@types/react-dom": "^17.0.11",
         "@types/styled-components": "^5.1.19",
         "@typescript-eslint/eslint-plugin": "^4.31.1",
         "@typescript-eslint/parser": "^4.31.1",
@@ -49,7 +51,7 @@
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
         "clean-webpack-plugin": "^4.0.0",
-        "css-loader": "^4.1.1",
+        "css-loader": "^6.5.1",
         "cssnano": "^5.0.8",
         "eslint": "^7.32.0",
         "eslint-config-airbnb": "^18.2.1",
@@ -64,6 +66,7 @@
         "file-loader": "^6.0.0",
         "gulp-imagemin": "^8.0.0",
         "gulp-prettier": "^4.0.0",
+        "husky": "^7.0.4",
         "node-sass": "^6.0.1",
         "postcss": "^8.3.6",
         "postcss-loader": "^6.2.0",
@@ -79,12 +82,15 @@
         "webpack-cli": "^4.9.1",
         "webpack-dev-server": "^4.2.1"
     },
+    "husky": {    
+        "hooks": {      
+          "pre-commit": "eslint --debug --ext .js,.ts,.tsx src/ --fix"   
+        }  
+     },
     "scripts": {
         "gulp-build": "gulp build",
         "gulp-dev": "gulp dev",
         "gulp-clean": "gulp clean",
-        "lint:write": "eslint --debug gulp/ --fix",
-        "lint": "eslint --ext .js,.ts --debug src/",
         "webpack-build": "webpack",
         "webpack-dev": "webpack serve --open --mode development"
     },
