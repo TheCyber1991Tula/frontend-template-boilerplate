@@ -5,3 +5,9 @@ node_modules
 /.vscode
 gulp
 webpack.config.js
+postcss.config.js
+.eslintrc.js
+gulpfile.babel.js
+.babelrc
+.prettierrc
+tsconfig.json

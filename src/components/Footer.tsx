@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import 'src/assets/fonts/fonts.scss';
+import '../assets/fonts/fonts.scss';
 
 export default class Footer extends Component {
     render() {
         return (
             <StyledFooter className="container">
-                <h4>Created by CYBER</h4>
+                <StyledH4>Created by CYBER</StyledH4>
+                <StyledH5>copyright 2022</StyledH5>
             </StyledFooter>
         );
     }
 }
 
 const StyledFooter = styled.div`
-    border: solid 1px black;
+    align-items: center;
+    background: #C4C5D0;
     border-radius: 5px;
-    background: green;
-    font-family: 'Roboto Regular';
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+const StyledH4 = styled.h4`
+    font-family: 'Vogue Bold';
+    font-size: 25px;
+    text-align: center;
+`;
+
+const StyledH5 = styled.h5`
+    font-family: 'Vogue Bold';
+    font-size: 20px;
+    text-align: center;
 `;

@@ -29,6 +29,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "array-callback-return": "off",
         "arrow-parens": [
             "error",
             "as-needed"
@@ -70,13 +71,16 @@
         "no-console": "off",
         "no-eval": "error",
         "react/prefer-stateless-function": [0, { "ignorePureComponents": false }],
+        "no-constant-condition": "off",
         "no-extra-semi": "off",
+        "no-param-reassign": "off",
         "no-plusplus": [
             "error",
             {
                 "allowForLoopAfterthoughts": true
             }
         ],
+        "no-restricted-syntax": ["error", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"],
         "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
         "no-use-before-define": "off",
         "no-unused-vars": "off",
@@ -96,6 +100,8 @@
             "beforeClosing": "never"
         }],
         "react/prop-types": [1, {}],
+        "react/state-in-constructor": "off",
+        "space-before-blocks": "error",
         "quote-props": "off",
         "quotes": [
             "error",

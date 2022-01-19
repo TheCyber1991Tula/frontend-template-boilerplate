@@ -1,21 +1,39 @@
 const webpack = require('webpack');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
+const { readdirSync } = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-const { env } = require('process')
 
 const PATHS = {
     src: resolve(__dirname, 'src'),
     dist: resolve(__dirname, 'dist'),
+    pugPages: join(resolve(__dirname, 'src'), 'pug'),
 };
+
+const HTMLPages = readdirSync(`${PATHS.pugPages}`).filter(filename => filename.endsWith('.pug'));
 
 const getPlugins = () => [
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    // * закомментируй это если пишешь на html
+    ...HTMLPages.map(page => new HtmlWebpackPlugin({
+        template: `${PATHS.src}/pug/${page}`,
+        filename: `./${page.replace(/\.pug/, '.html')}`,
+        minify: process.env.MODE === 'production' ? true : false,
+        favicon: 'assets/favicon.png',
+        meta: {
+            viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no',
+            'X-UA-Compatible': 'IE=edge',
+            charset: 'UTF-8'
+        }
+    })),
+    // * закомментируй это если используешь pug
+    /*
     new HtmlWebpackPlugin({
         template: `${PATHS.src}/pages/index.html`,
-        minify: true,
+        filename: 'index.html',
+        minify: process.env.MODE === 'production' ? true : false,
         favicon: 'assets/favicon.png',
         meta: {
             viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no',
@@ -23,6 +41,7 @@ const getPlugins = () => [
             charset: 'UTF-8'
         }
     }),
+    */
     new webpack.SourceMapDevToolPlugin({ filename: '[file].map' }),
     new CleanWebpackPlugin(),
 ];
@@ -41,18 +60,14 @@ module.exports = {
         path: PATHS.dist,
         publicPath: '/',
     },
-    mode: env === 'production' ? 'production' : 'development',
-    devtool: env === 'production' ? '' : 'cheap-module-source-map',
+    mode: process.env.MODE,
+    devtool: process.env.MODE === 'production' ? 'source-map' : 'eval-source-map',
     devServer: {
         hot: true,
         open: true,
         port: 8097,
         client: {
             overlay: true,
-        },
-        headers: {
-            'Access-Control-Allow-Private-Network': true,
-            'Access-Control-Allow-Origin': '*',
         },
     },
     optimization: {
@@ -96,6 +111,10 @@ module.exports = {
                 },
             },
             {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+            },
+            {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
@@ -117,21 +136,21 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             esModule: false,
-                            sourceMap: env === 'production' ? false : true,
+                            sourceMap: process.env.MODE === 'production' ? false : true,
                             url: true,
                         },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: env === 'production' ? false : true,
+                            sourceMap: process.env.MODE === 'production' ? false : true,
                             // config: { path: './postcss.config.js' }, // * Path to postcss cnnfig file
                             execute: false, // * Enable or Disable PostCSS Parser support in CSS-in-JS
                         },
                     },
                     {
                         loader: 'sass-loader',
-                        options: { sourceMap: this.mode === 'production' ? false : true },
+                        options: { sourceMap: process.env.MODE === 'production' ? false : true },
                     },
                 ],
             },
@@ -146,5 +165,6 @@ module.exports = {
             Scripts: `${PATHS.src}/scripts` // алиас для директории src/components
         },
     },
-    plugins: env === 'production' ? [new CleanWebpackPlugin()] : getPlugins(),
+    plugins: process.env.MODE === 'production' ? [new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })] : getPlugins(),
 };

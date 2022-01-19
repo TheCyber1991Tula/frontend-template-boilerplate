@@ -1,31 +1,38 @@
-import React from 'react';
-// import styled from 'styled-components';
-// import * as postData from 'src/scripts/data.json';
+import React, { Component } from 'react';
 import TodoItem from './TodoItem';
-import 'src/assets/fonts/fonts.scss';
+import '../assets/fonts/fonts.scss';
 
 interface IPost {
-    id: number
-    heading: string
-    price: number
-    description: string
-    canBuy(): boolean
+    id: number;
+    info: {
+        heading: string;
+        price: number;
+        description: string;
+    };
 }
 
-interface Style {
-    [key: string]: string
-}
+const todoData = [
+    {
+        'heading': 'Heading 1',
+        'price': 15000,
+        'description': 'et enim repellendus',
+    },
+    {
+        'heading': 'Heading 2',
+        'price': 8000,
+        'description': 'et enim repellendus',
+    },
+    {
+        'heading': 'Heading 3',
+        'price': 4500,
+        'description': 'et enim repellendus',
+    },
+];
 
-/*
-const STodoItem: Style = styled.div`
-    width: 100%;
-    height: auto;
-    background: skyblue;
-    font-family: 'Roboto Regular';
-    font-style: italic;
-`;
-*/
-
-const Todo = () => <TodoItem id={} heading={} price={} description={}/>;
-
-export default Todo;
+export default class Todo extends Component {
+    render() {
+        return (
+            <TodoItem heading="Заголовок" />
+        );
+    };
+};

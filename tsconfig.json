@@ -3,11 +3,11 @@
     его значениями из секций ниже. */
     "compileOnSave": true,
     "compilerOptions": {
-        "module": "amd",
+        "module": "es6",
         "outDir": "./dist",
         // Настройки для поиска @types
         "typeRoots": [
-            "./typings"
+            "./types"
         ],
         "types": ["node"], /* Если указан параметр "types", то из всех найденных будут использованы только те 
         описания типов, что указаны в его массиве, а именно: "./typings/node", "./typings/lodash", "./typings/express".
@@ -64,7 +64,7 @@
         "assumeChangesOnlyAffectDirectDependencies": false,
         "charset": "utf8",
         "declaration": true,
-        "declarationDir": ".",
+        "declarationDir": "src/types",
         "declarationMap": false,
         "diagnostics": false,
         "disableSizeLimit": false,
@@ -107,15 +107,15 @@
         "traceResolution": false
     },
     "files": [
-        "src/App.tsx"
+        "src/App.tsx",
+        "src/index.tsx",
     ],
     "include": [
-        "src/scripts/data.json",
-        "src/scripts/lections.ts",
-        "src/components/**.*",
+        "src/scripts/*",
+        "src/components/*",
     ],
     "exclude": [
         "src/**/*.spec.ts",
-        "node_modules"
+        "node_modules",
     ]
 }
