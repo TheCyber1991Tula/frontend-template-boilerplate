@@ -90,13 +90,14 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "eslint --debug --ext .js,.ts,.tsx src/ --fix"
+            "pre-commit": "npm run lint"
         }
     },
     "scripts": {
         "gulp-build": "gulp build",
         "gulp-dev": "gulp dev",
         "gulp-clean": "gulp clean",
+        "lint": "eslint --debug --ext .js,.ts,.tsx src/ --fix",
         "webpack-build": "cross-env MODE=production webpack",
         "webpack-dev": "cross-env MODE=development webpack serve --open"
     },
