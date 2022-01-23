@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import '../assets/fonts/fonts.scss';
 
 interface Style {
     [key: string]: string

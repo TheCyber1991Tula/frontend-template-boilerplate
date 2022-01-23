@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Todo from './components/Todo';
 import Footer from './components/Footer';
 import ItemStatusFilter from './components/ItemStatusFilter';
+import SearchBar from './components/SearchBar';
 
 interface Style {
     [key: string]: string
@@ -22,6 +23,7 @@ const App = () => {
         <StyledApp>
             <Header />
             <ItemStatusFilter />
+            <SearchBar />
             <Footer />
         </StyledApp>
     );

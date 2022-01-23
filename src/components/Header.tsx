@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import '../assets/fonts/fonts.scss';
+import '../assets/styles/style.scss';
 
 export default class Header extends Component {
     render() {
@@ -25,7 +25,7 @@ const StyledHeader = styled.div`
     border: solid 1px black;
     display: flex;
     flex-direction: row;
-    font-family: 'Vogue Bold';
+    font-family: 'Lucida Sans Typewriter Bold';
     font-style: italic;
     height: 100px;
     justify-content: center;

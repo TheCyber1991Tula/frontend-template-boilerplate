@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
-import '../assets/fonts/fonts.scss';
 
 interface IPost {
     id: number;

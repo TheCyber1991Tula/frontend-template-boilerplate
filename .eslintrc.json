@@ -80,7 +80,7 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
-        "no-restricted-syntax": ["error", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"],
+        "no-restricted-syntax": ["error", "WithStatement", "BinaryExpression[operator='in']"],
         "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
         "no-use-before-define": "off",
         "no-unused-vars": "off",
