@@ -1,33 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import '../assets/styles/style.scss';
+import '../assets/styles/Header.scss';
 
 export default class Header extends Component {
     render() {
         return (
-            <StyledHeader className="container">
-                <StyledH1>ToDo Application</StyledH1>
-            </StyledHeader>
+            <div className="container" id="header__wrap">
+                <h1 id="header__h1">ToDo Application</h1>
+            </div>
         );
     };
 };
-
-const StyledH1 = styled.h1`
-    font-family: 'Vogue Bold';
-    font-size: 50px;
-    text-align: center;
-`;
-
-const StyledHeader = styled.div`
-    align-items: center;
-    background: #C4C5D0;
-    border-radius: 5px;
-    border: solid 1px black;
-    display: flex;
-    flex-direction: row;
-    font-family: 'Lucida Sans Typewriter Bold';
-    font-style: italic;
-    height: 100px;
-    justify-content: center;
-    width: 100%;
-`;

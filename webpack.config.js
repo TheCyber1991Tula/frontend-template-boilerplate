@@ -42,7 +42,7 @@ module.exports = smp.wrap({
         app: `${PATHS.src}/index.tsx`,
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].js',
         path: PATHS.dist,
         publicPath: '/',
     },
