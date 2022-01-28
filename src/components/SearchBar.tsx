@@ -1,28 +1,12 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import '@Styles/SearchBar.scss';
 
-export default class SearchBar extends Component {
-    render() {
-        return (
-            <SSearchBarWrap>
-                <SInput type="text" />
-                <button className="btn btn-primary" type="button">Clear</button>
-            </SSearchBarWrap>
-        );
-    }
+const SearchBar = () => {
+    return (
+        <div className="container" id="searchbar__input__wrap">
+            <input type="text" placeholder="Type to search" id="search-input" />
+        </div>
+    );
 };
 
-const SSearchBarWrap = styled.div`
-    background: silver;
-    border-radius: 3px;
-    border: black 1px solid;
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    width: 300px;
-`;
-
-const SInput = styled.input`
-    width: 150px;
-    height: 30px;
-`;
+export default SearchBar;

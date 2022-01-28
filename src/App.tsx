@@ -1,31 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
-import Header from './components/Header';
-import Todo from './components/Todo';
-import Footer from './components/Footer';
-import ItemStatusFilter from './components/ItemStatusFilter';
-import SearchBar from './components/SearchBar';
+import Header from '@Components/Header';
+import Todo from '@Components/Todo';
+import Footer from '@Components/Footer';
+import ItemStatusFilter from '@Components/ItemStatusFilter';
+import SearchBar from '@Components/SearchBar';
 
-interface Style {
-    [key: string]: string
-}
-
-const StyledApp = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
+import '@Styles/App.scss';
 
 const App = () => {
     return (
-        <StyledApp>
+        <div className="container" id="app-wrap">
             <Header />
             <ItemStatusFilter />
             <SearchBar />
+            <Todo />
             <Footer />
-        </StyledApp>
+        </div>
     );
 };
 

@@ -20,7 +20,7 @@ const arrWithMonths: string[] = [
 // * сортировка массива
 function sort(array: number[]): number[] {
     array.sort((a: number, b: number): number => a - b);
-    console.log(`Отсортированный массив ${array}`);
+    // console.log(`Отсортированный массив ${array}`);
     return array;
 }
 sort(arrWithNumbers);
@@ -28,7 +28,7 @@ sort(arrWithNumbers);
 // * фильтрование массива из чисел и строк, оставляем только числа
 function arrFilter(array: any[]): void {
     const result = array.filter((elem: number | string) => typeof elem === 'number');
-    console.log(`Массив только с числами ${result}`);
+    // console.log(`Массив только с числами ${result}`);
 }
 arrFilter(arrWithNumbersAndStrings);
 
@@ -41,7 +41,7 @@ function arrFill(count: number): number[] {
     }
     return result;
 }
-console.log(`Наполненный масив ${arrFill(10)}`);
+// console.log(`Наполненный масив ${arrFill(10)}`);
 // * Теперь упорядочим этот массив
 sort(arrFill(20));
 
@@ -51,7 +51,7 @@ function monthToconsole(array: string[]) {
     const month: number = 4;
     for (let i: number = 0; i <= array.length; i++) {
         if (i === month - 1) {
-            console.log(array[i]);
+            // console.log(array[i]);
         }
     }
 }
@@ -63,7 +63,7 @@ function findDuplicate(array: number[]): void {
     sort(array);
     for (let i: number = 0; i <= array.length; i++) {
         if (array[i] === array[i - 1]) {
-            console.log(`Найдено повторяющееся число ${array[i]}`);
+            // console.log(`Найдено повторяющееся число ${array[i]}`);
         }
     }
 }
@@ -81,14 +81,14 @@ interface IResult {
 function makeObject(keys: string[], values: number[]): void {
     const result: IResult = {};
     const valuesEven = values.filter(elem => elem % 2 === 0);
-    console.log(valuesEven);
+    // console.log(valuesEven);
 
     for (let i: number = 0; i < valuesEven.length; i++) {
         const key: string = keys[i];
         const value: number = valuesEven[i];
         result[key] = value;
     }
-    console.log(`Объект из двух массивов ${result}`);
+    // console.log(`Объект из двух массивов ${result}`);
 }
 makeObject(keysForObject, valuesForObject);
 
@@ -106,14 +106,14 @@ function arrayComparison(array1: number[], array2: number[]): void {
             }
         });
     });
-    console.log(`числа повторяющиеся в массивах ${result}`);
+    // console.log(`числа повторяющиеся в массивах ${result}`);
 }
 arrayComparison(arrayForComparison1, arrayForComparison2);
 
 // * rest spread оператор
 
 const arrayForRestSpread: number[] = [1, 2, 3, 4, 5, 6, 7];
-console.log(...arrayForRestSpread);
+// console.log(...arrayForRestSpread);
 
 // * максимальное и минимальное значение в массивах
 
@@ -123,9 +123,9 @@ const arrayForMinMax2: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //* методо�
 function sortArrMinMax(array: number[]): void {
     const resultMin = Math.min(...array);
     const resultMax = Math.max(...array);
-    console.log(`Наименьшее значение ${resultMin}`);
-    console.log(`Максимальное значение ${resultMax}`);
-};
+    // console.log(`Наименьшее значение ${resultMin}`);
+    // console.log(`Максимальное значение ${resultMax}`);
+}
 sortArrMinMax(arrayForMinMax1);
 
 function sortArrClassic(array: number[]): void {
@@ -133,7 +133,30 @@ function sortArrClassic(array: number[]): void {
     const first = array[0];
     const last = array[array.length - 1];
 
-    console.log(`наибольшее значение из массива ${last}`);
-    console.log(`наименьшее значение из массива ${first}`);
+    // console.log(`наибольшее значение из массива ${last}`);
+    // console.log(`наименьшее значение из массива ${first}`);
 }
 sortArrClassic(arrayForMinMax2);
+
+// * Методы массивов и объектов
+
+interface ITest333 {
+    first: string;
+    second: string;
+    third: string;
+}
+const test333: ITest333 = {
+    first: 'value1',
+    second: 'value2',
+    third: 'value3',
+};
+// console.log(Object.values(test333));
+
+// * метод flat
+
+const arrForFlat = [
+    [1, 2, 3, 4],
+    [1, 2, 3, 4, 5],
+    [5, 6, 7, 8, 9],
+];
+// console.log(`flat array ${arrForFlat.flat(1)}`);

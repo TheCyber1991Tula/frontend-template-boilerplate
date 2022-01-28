@@ -2,61 +2,47 @@
 	font: {
 		family: 'Compact Bold';
 	}
-	src: url('../fonts/Compact-Bold.ttf') format('truetype');
+	src: url('../fonts/compact-bold.woff') format('woff');
 }
 
 @font-face{
 	font: {
-		family: 'Lucida Sans Typewriter Bold';
+		family: 'Noto Sans Display Condensed Extrabold Italic';
 	}
-	src: url('../fonts/Lucida-Sans-Typewriter-Bold.ttf') format('truetype');
+	src: url('../fonts/noto-sans-display-condensed-extrabold-italic.woff') format('woff');
 }
 
 @font-face{
 	font: {
 		family: 'Open Sans Bold';
 	}
-	src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+	src: url('../fonts/open-sans-bold.woff') format('woff');
 }
 
 @font-face{
 	font: {
 		family: 'Open Sans Regular';
 	}
-	src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
-}
-
-@font-face{
-	font: {
-		family: 'Open Sans Condensed Bold';
-	}
-	src: url('../fonts/OpenSans_Condensed-Bold.ttf') format('truetype');
-}
-
-@font-face{
-	font: {
-		family: 'Open Sans Condensed Regular';
-	}
-	src: url('../fonts/OpenSans_Condensed-Regular.ttf') format('truetype');
-}
-
-@font-face{
-	font: {
-		family: 'Vogue Bold';
-	}
-	src: url('../fonts/Vogue-Bold.ttf') format('truetype');
+	src: url('../fonts/open-sans.woff') format('woff');
 }
 
 @font-face{
 	font: {
 		family: 'Roboto Bold';
 	}
-	src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+	src: url('../fonts/roboto-bold.woff') format('woff');
+}
+
+@font-face{
+	font: {
+		family: 'Accuratist';
+	}
+	src: url('../fonts/accuratist.woff') format('woff');
 }
 
 @font-face{
 	font: {
 		family: 'Roboto Regular';
 	}
-	src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+	src: url('../fonts/roboto-regular.woff') format('woff');
 }

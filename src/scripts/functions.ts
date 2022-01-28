@@ -1,14 +1,14 @@
 // * Практика с функциями
-console.warn('hello from Functions!');
+// console.warn('hello from Functions!');
 
 // * перегрузка функций
 
 const arr2 = [1, 2, 3, 4, 5, 6];
 const sum = (args: string[] | number[]): void => {
     if (typeof args[0] === 'string') {
-        console.log('Вы передали массив строк');
+        // console.log('Вы передали массив строк');
     } else if (typeof args[0] === 'number') {
-        console.log('Вы передали массив чисел');
+        // console.log('Вы передали массив чисел');
     }
 };
 
@@ -25,7 +25,7 @@ const fibonacci = (iterCount: number): number[] => {
     }
     return fibNums;
 };
-console.log(fibonacci(10));
+// console.log(fibonacci(10));
 
 // * генератор цветов
 
@@ -36,6 +36,6 @@ const getColor = (): void => {
         const symbol = symbols.charAt(Math.random() * symbols.length);
         result += symbol;
     }
-    console.log(`цвет ${result}`);
+    // console.log(`цвет ${result}`);
 };
 getColor();

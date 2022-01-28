@@ -1,0 +1,35 @@
+@import '@Styles/fonts.scss';
+
+#todo-list-item{
+    background: skyblue;
+    font: {
+        family: 'Roboto Regular';
+        style: italic;
+    }
+    height: auto;
+    width: 100%;
+
+    .todo-list-item__heading{
+        color: black;
+        font: {
+            family: 'Roboto Bold';
+            size: 22px;
+        }
+    }
+
+    .todo-list-item__price{
+        color: rgb(87, 81, 81);
+        font: {
+            family: 'Roboto Regular';
+            size: 18px;
+        }
+    }
+
+    .todo-list-item__description{
+        color: black;
+        font: {
+            family: 'Roboto Regular';
+            size: 18px;
+        }
+    }
+}

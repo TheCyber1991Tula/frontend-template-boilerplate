@@ -11,13 +11,13 @@ const smp = new SpeedMeasurePlugin();
 const PATHS = {
     src: resolve(__dirname, 'src'),
     dist: resolve(__dirname, 'dist'),
-    htmlPages: join(resolve(__dirname, 'src'), 'pages'),
+    htmlPages: resolve(__dirname, 'src/pages'),
 };
 
 const getPlugins = () => [
         new HtmlWebpackPlugin({
             template: `${PATHS.htmlPages}/index.html`,
-            filename: 'index.html',
+            filename: './index.html',
             minify: process.env.MODE === 'production' ? true : false,
             favicon: 'assets/favicon.png',
             meta: {
@@ -96,11 +96,15 @@ module.exports = smp.wrap({
                 },
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader',
-                options: {
-                    name: 'fonts/[name].[ext]',
-                },
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'fonts/[name].[ext]',
+                        },
+                    },
+                ]
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -143,11 +147,12 @@ module.exports = smp.wrap({
     },
     resolve: {
         enforceExtension: false,
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss'],
         alias: {
-            Assets: `${PATHS.src}/assets`, // алиас для директории src/assets
-            Components: `${PATHS.src}/components`, // алиас для директории src/components
-            Scripts: `${PATHS.src}/scripts`, // алиас для директории src/components
+            '@Fonts': join(__dirname, 'src/assets/fonts'),
+            '@Components': join(__dirname, 'src/components'),
+            '@Scripts': join(__dirname, 'src/scripts'),
+            '@Styles': join(__dirname, 'src/assets/styles'),
         },
     },
     plugins:

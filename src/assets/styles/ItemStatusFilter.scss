@@ -1,0 +1,27 @@
+@import '@Styles/fonts.scss';
+
+#itemStatusFilter__wrap{
+    background: #C4C5D0;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Accuratist';
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+
+    button{
+        border-radius: 5px;
+        border: 1px solid black;
+        flex-direction: row;
+        font-family: 'Roboto Regular';
+        font-style: italic;
+        height: 50%;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+    }
+}

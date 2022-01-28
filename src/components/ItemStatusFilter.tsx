@@ -1,40 +1,20 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import '@Styles/ItemStatusFilter.scss';
 
-export default class ItemStatusFilter extends Component {
-    render() {
-        return (
-            <StyledItemStatusFilter>
-                <StyledButton type="button" className="btn btn-warning">Active</StyledButton>
-                <StyledButton type="button" className="btn btn-success">Complete</StyledButton>
-                <StyledButton type="button" className="btn btn-primary">All</StyledButton>
-            </StyledItemStatusFilter>
-        );
-    }
+const ItemStatusFilter = () => {
+    return (
+        <div id="itemStatusFilter__wrap">
+            <button type="button" className="btn btn-warning" id="button-filter-active">
+                Active
+            </button>
+            <button type="button" className="btn btn-success" id="button-filter-complete">
+                Complete
+            </button>
+            <button type="button" className="btn btn-primary" id="button-filter-all">
+                All
+            </button>
+        </div>
+    );
 };
 
-const StyledItemStatusFilter = styled.div`
-    background: #C4C5D0;
-    border-radius: 5px;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    font-family: 'Vogue Bold';
-    height: 75px;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-`;
-
-const StyledButton = styled.button`
-    border-radius: 5px;
-    border: 1px solid black;
-    flex-direction: row;
-    font-family: 'Roboto Regular';
-    font-style: italic;
-    height: 50%;
-    justify-content: center;
-    text-align: center;
-    text-transform: uppercase;
-    width: auto;
-`;
+export default ItemStatusFilter;

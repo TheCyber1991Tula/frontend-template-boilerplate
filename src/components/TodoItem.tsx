@@ -1,40 +1,14 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import '@Styles/TodoItem.scss';
 
-interface Style {
-    [key: string]: string
-}
-
-interface IProps {
-    heading: string,
-    price: number,
-    description: string
-}
-
-const StyledTodoListItem: Style = styled.div`
-    background: skyblue;
-    font-family: 'Roboto Regular';
-    font-style: italic;
-    height: auto;
-    width: 100%;
-`;
-
-export default class TodoItem extends Component {
-    props: IProps = {
-        heading = this.props.heading,
-        price = this.props.price,
-        description = this.props.description,
-    };
-
-    state = {
-        important = false,
-    };
-
-    render() {
-        return(
-            <StyledTodoListItem>
-                <b>{ heading }</b>
-            </StyledTodoListItem>
-        )
-    }
+const TodoItem = () => {
+    return (
+        <div className="container" id="todo-list-item">
+            <b className="todo-list-item__heading">Test text of Heading</b>
+            <p className="todo-list-item__price">Test text of Price</p>
+            <p className="todo-list-item__description">Test text of Description</p>
+        </div>
+    );
 };
+
+export default TodoItem;
