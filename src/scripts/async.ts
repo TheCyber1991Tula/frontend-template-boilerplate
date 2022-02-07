@@ -16,7 +16,7 @@ const asData = () => new Promise((resolve, reject) => {
 
 const runAsData = async () => {
     const getResult = await asData();
-    // console.warn(`result is ${getResult}`);
+    console.warn(`result is ${getResult}`);
 };
 
 runAsData();

@@ -3,7 +3,7 @@ import $ from 'jquery';
 // * Практика на работу с DOM-деревом
 
 $(document).ready((): void => {
-    // console.warn('hello from DOM! document is loaded successfully!');
+    console.warn('hello from DOM! document is loaded successfully!');
 });
 
 const win: HTMLCollection = document.getElementsByTagName('body');

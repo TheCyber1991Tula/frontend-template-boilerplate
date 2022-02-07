@@ -11,6 +11,8 @@ import '@Scripts/promises';
 import '@Scripts/strings';
 import '@Scripts/dom';
 
+import '@Styles/App.scss';
+
 import '@Fonts/accuratist.woff';
 import '@Fonts/compact-bold.woff';
 import '@Fonts/noto-sans-display-condensed-extrabold-italic.woff';

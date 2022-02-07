@@ -5,7 +5,12 @@ import Footer from '@Components/Footer';
 import ItemStatusFilter from '@Components/ItemStatusFilter';
 import SearchBar from '@Components/SearchBar';
 
-import '@Styles/App.scss';
+const todoData = {
+    key: 1,
+    heading: 'Heading 1',
+    price: 15000,
+    description: 'et enim repellendus',
+};
 
 const App = () => {
     return (
@@ -13,7 +18,7 @@ const App = () => {
             <Header />
             <ItemStatusFilter />
             <SearchBar />
-            <Todo />
+            <Todo heading={todoData.heading} price={todoData.price} description={todoData.description} key={todoData.key} />
             <Footer />
         </div>
     );

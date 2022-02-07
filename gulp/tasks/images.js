@@ -1,8 +1,8 @@
 import gulp from 'gulp';
-const browserSync = require('browser-sync').create();
 import plumber from 'gulp-plumber';
 import paths from '../paths';
 import imagemin from 'gulp-imagemin';
+const browserSync = require('browser-sync').create();
 
 // * конфигурация для таска
 const config = [
@@ -18,7 +18,8 @@ const config = [
     ];
 
 // * описание таска
-const images = () => gulp
+const images = () =>
+    gulp
     .src(paths.images.src)
     .pipe(plumber())
     .pipe(imagemin(config))

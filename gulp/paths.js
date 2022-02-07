@@ -11,10 +11,6 @@ const paths = {
         'src': 'src/pages/*.html',
         'dest': 'dist/',
     },
-    'pug': {
-        'src': 'src/pug/*.pug',
-        'dest': 'dist/',
-    },
     'images': {
         'src': 'src/assets/img/*.{jpg,jpeg,png,svg,gif,webp,ico}',
         'dest': 'dist/img/',

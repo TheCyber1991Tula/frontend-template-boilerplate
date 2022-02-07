@@ -1,12 +1,12 @@
 import React from 'react';
 import '@Styles/TodoItem.scss';
 
-const TodoItem = () => {
+const TodoItem = ({ heading, price, description }) => {
     return (
         <div className="container" id="todo-list-item">
-            <b className="todo-list-item__heading">Test text of Heading</b>
-            <p className="todo-list-item__price">Test text of Price</p>
-            <p className="todo-list-item__description">Test text of Description</p>
+            <b className="todo-list-item__heading">{heading}</b>
+            <p className="todo-list-item__price">{price}</p>
+            <p className="todo-list-item__description">{description}</p>
         </div>
     );
 };
