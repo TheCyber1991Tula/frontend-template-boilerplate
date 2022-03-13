@@ -25,4 +25,5 @@ const getColor = (): string => {
 
 const testBlock = $('#test').on('click', () => {
     testBlock.css({ 'background': getColor() });
+    $('#color').html(`color is ${getColor()}`);
 });

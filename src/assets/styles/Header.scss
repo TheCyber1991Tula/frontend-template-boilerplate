@@ -2,7 +2,7 @@
 
 #header__wrap{
     align-items: center;
-    background: #C4C5D0;
+    background: #c1c2ca;
     border-radius: 5px;
     border: solid 1px black;
     display: flex;
@@ -12,6 +12,7 @@
     width: 100%;
 
     #header__h1{
+        color: black;
         text-align: center;
         font: {
             family: 'Noto Sans Display Condensed Extrabold Italic';

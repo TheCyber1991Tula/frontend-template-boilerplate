@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@Components/Header';
-import Todo from '@Components/Todo';
+// import Todo from '@Components/Todo';
 import Footer from '@Components/Footer';
 import ItemStatusFilter from '@Components/ItemStatusFilter';
 import SearchBar from '@Components/SearchBar';
@@ -18,7 +18,6 @@ const App = () => {
             <Header />
             <ItemStatusFilter />
             <SearchBar />
-            <Todo heading={todoData.heading} price={todoData.price} description={todoData.description} key={todoData.key} />
             <Footer />
         </div>
     );

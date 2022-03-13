@@ -1,5 +1,5 @@
 // * Практика на промисы
-// console.warn('hello from Promises!');
+console.warn('hello from Promises!');
 
 let test: string = '';
 function timed() {

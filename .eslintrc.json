@@ -29,6 +29,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "func-names": "off",
         "array-callback-return": "off",
         "arrow-parens": [
             "error",
@@ -69,6 +70,7 @@
         "max-len": ["error", { "code": 140, "tabWidth": 4 }],
         "no-alert": "off",
         "no-console": "off",
+        "no-loop-func": "off",
         "no-eval": "error",
         "react/prefer-stateless-function": [0, { "ignorePureComponents": false }],
         "no-constant-condition": "off",

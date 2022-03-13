@@ -1,5 +1,5 @@
 // * Практика с функциями
-// console.warn('hello from Functions!');
+console.warn('hello from Functions!');
 
 // * перегрузка функций
 

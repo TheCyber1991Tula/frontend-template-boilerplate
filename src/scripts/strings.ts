@@ -1,5 +1,5 @@
 // * Практика на строки
-// console.warn('hello from Strings!');
+console.warn('hello from Strings!');
 
 // * разбитие строки на слова в массив
 
