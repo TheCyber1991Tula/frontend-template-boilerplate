@@ -1,4 +1,6 @@
 console.log('hello from calc!');
+// ! вводится несколько нулей в начале
+// ! неправильно работает клавиша 00
 
 const calcDisplay = document.getElementById('calc__display');
 
@@ -59,6 +61,7 @@ let operand2 = '';
 const numKeysCollection = document.getElementsByClassName('button__number');
 for (let i = 0; i < numKeysCollection.length; i++) {
     numKeysCollection[i].addEventListener('click', () => {
+        // * строковое значение также нужно
         const thisValue = numKeysCollection[i].value;
         const thisValueNum = Number(numKeysCollection[i].value);
 
