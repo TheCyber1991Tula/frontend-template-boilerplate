@@ -1,5 +1,7 @@
 console.log('hello from calc!');
 
+// ! при нажатии точки с пустым дисплеем вводится 0. и не получается ввести еще один ноль
+
 // * declaring variables
 let operation = '';
 let operand1 = '';
@@ -22,7 +24,7 @@ clear.addEventListener('click', () => {
 const summary = document.getElementById('sum');
 summary.addEventListener('click', () => {
     operation = '+';
-    operand2 = calcDisplay.innerText;
+    operand1 = calcDisplay.innerText;
     console.log(operation);
 });
 
@@ -30,7 +32,7 @@ summary.addEventListener('click', () => {
 const difference = document.getElementById('diff');
 difference.addEventListener('click', () => {
     operation = '-';
-    operand2 = calcDisplay.innerText;
+    operand1 = calcDisplay.innerText;
     console.log(operation);
 });
 
@@ -38,7 +40,7 @@ difference.addEventListener('click', () => {
 const multi = document.getElementById('mult');
 multi.addEventListener('click', () => {
     operation = '*';
-    operand2 = calcDisplay.innerText;
+    operand1 = calcDisplay.innerText;
     console.log(operation);
 });
 
@@ -46,35 +48,38 @@ multi.addEventListener('click', () => {
 const divide = document.getElementById('div');
 divide.addEventListener('click', () => {
     operation = '/';
-    operand2 = calcDisplay.innerText;
+    operand1 = calcDisplay.innerText;
     console.log(operation);
 });
 
 const dot = document.getElementById('dot');
 dot.addEventListener('click', () => {
-    if (!calcDisplay.innerHTML.includes('.')) {
-        calcDisplay.innerHTML += '.';
+    if (calcDisplay.innerText === '') {
+        calcDisplay.innerText = '0.';
+    }
+    if (!calcDisplay.innerText.includes('.')) {
+        calcDisplay.innerText += '.';
         operand1 += '.';
     }
 });
 
 // * additional functions
 
-// * плюс минус
+// * reverse sign
 const plusMinus = document.getElementById('plusMinus');
 plusMinus.addEventListener('click', () => {
     // @ts-ignore
     calcDisplay.innerHTML -= 2 * calcDisplay.innerHTML;
 });
 
-// * клавиша backspace
+// * backspace key
 const bksp = document.getElementById('bksp');
 bksp.addEventListener('click', () => {
     const slicer = calcDisplay.innerText.slice(0, calcDisplay.innerText.length - 1);
     calcDisplay.innerHTML = slicer;
 });
 
-// * квадратный корень
+// * square root
 const sqrt = document.getElementById('sqrt');
 sqrt.addEventListener('click', () => {
     const sqrtResult = Math.sqrt(calcDisplay.innerText).toPrecision(5);
@@ -84,13 +89,17 @@ sqrt.addEventListener('click', () => {
 const pow2 = document.getElementById('pow2');
 const powX = document.getElementById('powX');
 const memPlus = document.getElementById('memPlus');
-const memClear = document.getElementById('memClear');
 
-// * получение значений цифровых клавиш
+// * memory clear
+const memClear = document.getElementById('memClear');
+memClear.addEventListener('click', () => {
+
+});
+
+// * number keys add event listeners
 const numKeysCollection = document.getElementsByClassName('button__number');
 for (let i = 0; i < numKeysCollection.length; i++) {
     numKeysCollection[i].addEventListener('click', () => {
-        // * строковое значение также нужно
         // @ts-ignore
         const thisValue = numKeysCollection[i].value;
 
@@ -100,21 +109,21 @@ for (let i = 0; i < numKeysCollection.length; i++) {
     });
 };
 
-// * клавиша нуля
+// * zero button
 const zeroButton = document.getElementById('button__number__zero');
 zeroButton.addEventListener('click', evt => {
     if (calcDisplay.innerText === '' || calcDisplay.innerText[0] === '0') {
-        console.log('ошибка, вы не можете ввести несколько нулей вначале!!!');
+        console.log('error!');
     } else {
         calcDisplay.innerHTML += evt.target.value;
     }
 });
 
-// * клавиша дваойного нуля
+// * double zero button
 const doubleZeroButton = document.getElementById('button__number__doubleZero');
 doubleZeroButton.addEventListener('click', evt => {
     if (calcDisplay.innerText === '' || calcDisplay.innerText[0] === '0') {
-        console.log('ошибка, вы не можете ввести несколько нулей вначале!!!');
+        console.log('error!');
     } else {
         calcDisplay.innerHTML += evt.target.value;
     }
