@@ -13,7 +13,6 @@ import '@Scripts/strings';
 import '@Scripts/dom';
 import '@Scripts/etc';
 */
-import '@Scripts/calc';
 
 import '@Styles/App.scss';
 
