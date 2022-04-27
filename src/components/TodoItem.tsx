@@ -1,12 +1,20 @@
 import React from 'react';
 import '@Styles/TodoItem.scss';
 
-const TodoItem = ({ heading, price, description }) => {
+interface IProps {
+    task: string,
+    importance: boolean,
+}
+
+const TodoItem = ({ task, importance }: IProps) => {
+    const isImportant = {
+        background: importance ? '#FF6E6E' : '#55C0EB',
+    };
+
     return (
-        <div className="container" id="todo-list-item">
-            <b className="todo-list-item__heading">{heading}</b>
-            <p className="todo-list-item__price">{price}</p>
-            <p className="todo-list-item__description">{description}</p>
+        <div style={isImportant} className="container" id="todo-list-item">
+            <b className="todo-list-item__task">{ task }</b>
+            <b className="todo-list-item__importance">{ importance }</b>
         </div>
     );
 };

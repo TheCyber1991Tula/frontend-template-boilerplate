@@ -1,20 +1,21 @@
-@import './fonts.scss';
-
 #searchbar__input__wrap{
     background: silver;
     border-radius: 3px;
     border: black 1px solid;
     display: flex;
     flex-direction: row;
-    height: 100px;
-    width: 300px;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 600px;
 
     input{
-        width: 150px;
-        height: 30px;
+        width: 90%;
+        height: 70px;
         font: {
             family: 'Roboto Regular';
-            size: 18px;
+            size: 42px;
+            style: italic;
         }
     }
 }

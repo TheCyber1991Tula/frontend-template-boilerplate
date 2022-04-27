@@ -111,7 +111,6 @@
         "src/index.tsx",
     ],
     "include": [
-        "src/scripts/*",
         "src/components/*",
     ],
     "exclude": [
