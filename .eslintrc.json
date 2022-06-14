@@ -93,8 +93,8 @@
             "never"
         ],
         "max-len": ["error", { "code": 160, "tabWidth": 4 }],
-        "no-alert": "off",
-        "no-console": "off",
+        "no-alert": "error",
+        "no-console": "warn",
         "no-loop-func": "off",
         "no-eval": "error",
         "object-curly-newline": "off",
