@@ -106,7 +106,7 @@
         ]
     },
     "scripts": {
-        "prettier": "prettier --write src/components/*.tsx",
+        "prettier": "prettier --write",
         "gulp-build": "gulp build",
         "gulp-dev": "gulp dev",
         "gulp-clean": "gulp clean",
