@@ -4,16 +4,57 @@
         family: 'Roboto Regular';
         style: italic;
     }
-    height: auto;
+    height: 100px;
     width: 100%;
     text-align: center;
     margin: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid black;
 
     .todo-list-item__task{
+        text-transform: uppercase;
         color: black;
         font: {
             family: 'Roboto Bold';
-            size: 22px;
+            size: 32px;
+        }
+    }
+
+    .todo-item__buttons__wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 15%;
+
+        button#removeButton{
+            width: 75px;
+            height: 75px;
+            background-image: url('../img/remove.jpg');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        button#markAsImportantButton{
+            width: 75px;
+            height: 75px;
+            background-image: url('../img/d1ab016ee3cb12aabb5ac0fbf3081374.png');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        button#markAsCompleteButton{
+            width: 75px;
+            height: 75px;
+            background-image: url('../img/julk574r.png');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
     }
 }

@@ -1,5 +1,5 @@
 .todo__wrap{
-	width: 50%;
+	width: 100%;
 	height: auto;
 	padding: 50px;
 	background: silver;
@@ -7,4 +7,68 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 10px;
+
+	.todo-list-item{
+	    background: skyblue;
+	    font: {
+	        family: 'Roboto Regular';
+	        style: italic;
+	    }
+	    height: 100px;
+	    width: 100%;
+	    text-align: center;
+	    margin: 25px;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: space-between;
+	    align-items: center;
+	    border-radius: 5px;
+	    border: 1px solid black;
+
+	    .todo-list-item__task{
+	        text-transform: uppercase;
+	        color: black;
+	        font: {
+	            family: 'Roboto Bold';
+	            size: 32px;
+	        }
+	    }
+
+	    .todo-item__buttons__wrap{
+	        display: flex;
+	        flex-direction: row;
+	        justify-content: space-between;
+	        width: 15%;
+
+	        button.removeButton{
+	            width: 75px;
+	            height: 75px;
+	            background-image: url('../img/remove.jpg');
+	            background-size: contain;
+	            background-position: center center;
+	            background-repeat: no-repeat;
+	        }
+
+	        button.markAsImportantButton{
+	            width: 75px;
+	            height: 75px;
+	            background-image: url('../img/d1ab016ee3cb12aabb5ac0fbf3081374.png');
+	            background-size: contain;
+	            background-position: center center;
+	            background-repeat: no-repeat;
+	        }
+
+	        button.markAsCompleteButton{
+	            width: 75px;
+	            height: 75px;
+	            background-image: url('../img/julk574r.png');
+	            background-size: contain;
+	            background-position: center center;
+	            background-repeat: no-repeat;
+	        }
+	    }
+	}
 }

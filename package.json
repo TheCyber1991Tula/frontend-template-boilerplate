@@ -1,13 +1,13 @@
 {
-    "name": "orbit",
+    "name": "template_page",
     "version": "1.0.0",
-    "description": "Template page",
+    "description": "My Awesome Template Page",
     "main": "index.tsx",
     "private": true,
     "dependencies": {
         "@popperjs/core": "^2.11.0",
         "autoprefixer": "^10.3.6",
-        "browser-sync": "^2.27.5",
+        "browser-sync": "^2.27.10",
         "circular-dependency-plugin": "^5.2.2",
         "copy-webpack-plugin": "^9.0.1",
         "core-js": "^3.20.3",
@@ -30,6 +30,7 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-refresh": "^0.11.0",
+        "react-router-dom": "^6.3.0",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.41.1",
         "speed-measure-webpack-plugin": "^1.5.0",
@@ -93,10 +94,13 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run lint"
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run prettier"
         }
     },
     "scripts": {
+        "prettier": "prettier --write src/components/*.tsx",
+        "prepare": "husky install",
         "gulp-build": "gulp build",
         "gulp-dev": "gulp dev",
         "gulp-clean": "gulp clean",

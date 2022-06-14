@@ -53,6 +53,31 @@
                 ]
             }
         ],
+        "jsx-a11y/no-static-element-interactions": [
+            "error",
+            {
+                "handlers": [
+                    "onClick",
+                    "onMouseDown",
+                    "onMouseUp",
+                    "onKeyPress",
+                    "onKeyDown",
+                    "onKeyUp"
+                ]
+            }
+        ],
+        "jsx-a11y/no-noninteractive-element-interactions": [
+            "off"
+        ],
+        "jsx-a11y/click-events-have-key-events": [
+            "warn"
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            "off"
+        ],
+        "jsx-a11y/control-has-associated-label": [
+            "off"
+        ],
         "implicit-arrow-linebreak": [
             "error",
             "beside"
@@ -67,11 +92,12 @@
             "error",
             "never"
         ],
-        "max-len": ["error", { "code": 140, "tabWidth": 4 }],
+        "max-len": ["error", { "code": 160, "tabWidth": 4 }],
         "no-alert": "off",
         "no-console": "off",
         "no-loop-func": "off",
         "no-eval": "error",
+        "object-curly-newline": "off",
         "react/prefer-stateless-function": [0, { "ignorePureComponents": false }],
         "no-constant-condition": "off",
         "no-extra-semi": "off",
@@ -86,7 +112,7 @@
         "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
         "no-use-before-define": "off",
         "no-unused-vars": "off",
-        "prefer-template": "error",
+        "prefer-template": "off",
         "react/jsx-indent": [
             2,
             4,
@@ -101,7 +127,8 @@
             "afterOpening": "never",
             "beforeClosing": "never"
         }],
-        "react/prop-types": [1, {}],
+        "react/jsx-indent-props": [0, "tab"],
+        "react/prop-types": [0, {}],
         "react/state-in-constructor": "off",
         "space-before-blocks": "error",
         "quote-props": "off",

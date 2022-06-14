@@ -153,6 +153,7 @@ module.exports = smp.wrap({
             '@Components': join(__dirname, 'src/components'),
             '@Scripts': join(__dirname, 'src/scripts'),
             '@Styles': join(__dirname, 'src/assets/styles'),
+            '@Images': join(__dirname, 'src/assets/img'),
         },
     },
     plugins:

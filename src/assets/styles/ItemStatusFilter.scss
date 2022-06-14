@@ -1,25 +1,50 @@
 #itemStatusFilter__wrap{
+    align-items: center;
     background: #C4C5D0;
     border-radius: 5px;
-    border: none;
+    border: 1px solid black;
     display: flex;
-    flex-direction: row;
-    font-family: 'Accuratist';
-    height: 75px;
-    align-items: center;
+    flex-direction: column;
+    font:{
+        family: 'Accuratist';
+    }
+    height: 250px;
     justify-content: center;
-    width: 400px;
+    margin: 10px;
+    width: 100%;
+
+    h1{
+        color: black;
+        text-align: center;
+        font: {
+            family: 'Noto Sans Display Condensed Extrabold Italic';
+            style: italic;
+            size: 50px;
+        }
+    }
+
+    #itemStatusFilter__buttons-block{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
 
     button{
         border-radius: 5px;
         border: 1px solid black;
         flex-direction: row;
-        font-family: 'Roboto Regular';
-        font-style: italic;
-        height: 50%;
+        height: 90px;
         justify-content: center;
+        margin: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         text-align: center;
         text-transform: uppercase;
         width: auto;
+        font: {
+            family: 'Roboto Regular';
+            size: 35px;
+        };
     }
 }
